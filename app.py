@@ -1,10 +1,12 @@
 # app.py
 import streamlit as st
 
-st.title("📊 Internal Sales Dashboard")
+st.title("Simple Interest Calculator")
 
-username = st.text_input("Enter your name")
-sales = st.number_input("Enter today’s sales amount", min_value=0)
+P = st.number_input("Enter principal (₹)", min_value=0)
+R = st.number_input("Enter rate (%)", min_value=0.0)
+T = st.number_input("Enter time (years)", min_value=0.0)
 
-if st.button("Submit"):
-    st.success(f"Thank you {username}, sales of ₹{sales} submitted!")
+if st.button("Calculate"):
+    SI = (P * R * T) / 100
+    st.success(f"Simple Interest = ₹{SI:.2f}")
